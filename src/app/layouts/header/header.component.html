@@ -1,0 +1,49 @@
+<header class="top-header" style="margin-left: -1%; width:1400px  ;background-color: #fdfdfd;">
+    <nav class="navbar header-nav navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img style="width: 220px ;height: 80px; "  src="https://img.freepik.com/premium-vector/stairs-stage-with-microphone-logo-symbol-icon-vector-graphic-design-illustration-idea-creative_15473-8502.jpg" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-pend" id="navbar-wd"   style="margin-left: 250px;">
+                <ul class="navbar-nav" >
+                    <li><a routerLinkActive="active" class="nav-link active" routerLink="" >Home</a></li>
+                    <li><a routerLinkActive="active" class="nav-link" routerLink="/about" >About</a></li>
+                    <li><a routerLinkActive="active" class="nav-link" routerLink="/contact"  >Contact us</a></li>
+                    <li  *ngIf="!isAuhtenticated" class="menu-item dropdown" style="margin-top: 6px; "><a class="nav__link"  >Sign-In</a>
+                        <ul class="sub-nav"  style="margin-bottom: 4px;">
+                            <li (click)="navigateToLoginAdmin()"><a class="sub-nav__link" >Admin</a><i *ngIf="selectedOption == 'admin'" class="fas fa-check"></i>
+                            </li>
+                         <li (click)="navigateToLoginStudent()"><a class="sub-nav__link" style="margin-bottom: 4px;"  >student</a>  <i *ngIf="selectedOption =='student'" class="fas fa-check"></i></li>
+                         <li (click)="navigateToLoginCompany()"><a class="sub-nav__link" >Company</a><i *ngIf="selectedOption == 'company'" class="fas fa-check"></i></li>
+                       </ul>
+               
+                     </li>               
+                         <!-- dropDown-->
+                   <li *ngIf="!isAuhtenticated" class="menu-item dropdown" style="margin-top: 6px; "><a class="nav__link"  >Sign-Up</a>
+                    <ul class="sub-nav"  style="margin-bottom: 4px;">
+                     <li><a class="sub-nav__link" style="margin-bottom: 4px;" routerLink="/registerStudent">student</a></li>
+                     <li><a class="sub-nav__link" routerLink="/registerCompany">Company</a></li>
+                   </ul>
+           
+                 </li>
+ 
+                 <button style="margin:0px 8px;" routerLink="dashboard" *ngIf="isAuhtenticated" class="btn btn-sm btn-cart" data-toggle="dropdown"><i class="far fa-user fa-lg"  aria-hidden="true" style="cursor: pointer;"></i><span class="badge badge-danger">1</span>
+                 </button>
+                   <!-- findropDown-->
+             
+                    <!-- <li><a routerLinkActive="active" class="nav-link"   routerLink="/register">Sign-Up</a></li> -->
+                    <!-- <button style="margin:0px 8px;" *ngIf="isAuthinticated" class="btn btn-sm btn-cart" data-toggle="dropdown"><i class="fa fa-shopping-cart fa-lg" *ngIf="isAuthinticated" aria-hidden="true" style="cursor: pointer;"></i><span class="badge badge-danger">1</span>
+                </button> -->
+                    <!-- <button style="margin:0px 8px;" *ngIf="isAuthinticated" class="btn btn-sm btn-cart" data-toggle="dropdown" routerLink="/courses/panier"><i class="far fa-heart fa-lg" *ngIf="isAuthinticated" aria-hidden="true" style="cursor: pointer;"></i><span class="badge badge-danger">{{cartItemCount}}</span>
+                </button>
+                    <button style="margin:0px 8px;" routerLink="dashboard-user" *ngIf="isAuthinticated" class="btn btn-sm btn-cart" data-toggle="dropdown"><i class="far fa-user fa-lg" *ngIf="isAuthinticated" aria-hidden="true" style="cursor: pointer;"></i><span class="badge badge-danger">1</span>
+                </button> -->
+                </ul>
+            </div>
+          
+        </div>
+    </nav>
+</header>
